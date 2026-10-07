@@ -1,14 +1,13 @@
 import { Link, NavLink } from "react-router";
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useState} from "react";
 import { Search, TextAlignJustify, X } from "lucide-react"
-import { useContext } from "react";
-import { AuthContext } from "../context/authcontext";
+import { useAuthContext } from "../context/authcontext";
 function Header() {
-    const navigate = useNavigate("")
+    const navigate = useNavigate()
 
     const [isOpen, setIsOpen] = useState(false);
-    const { user, setUser } = useContext(AuthContext);
+    const { user, setUser } = useAuthContext()
     function handelClick() {
         return setIsOpen(!isOpen)
     }
