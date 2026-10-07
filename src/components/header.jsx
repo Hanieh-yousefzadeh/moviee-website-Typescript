@@ -29,7 +29,7 @@ function Header() {
             <div className="sm:flex sm:gap-4 hidden items-center">
                 <NavLink to="/search" className={({ isActive }) => `sm:flex ${isActive ? "text-[#CF900C]" : "text-neutral-50"}`}><Search className="sm:size-5 text-neutral-300  hover:text-[#CF900C]" strokeWidth={3} /></NavLink>
                 <span>Hello {user.name}</span>
-                <button onClick={handelLog} className="text-lg  hover:text-[#CF900C]">Logout</button>
+                <button onClick={handelLog} className="text-base bg-[#CF900C] px-5 pt-1 pb-2 rounded-full text-black  hover:text-neutral-50">Logout</button>
 
             </div>
             <button onClick={handelClick} className="text-[#CF900C] self-center sm:hidden">

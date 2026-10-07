@@ -74,7 +74,7 @@ function Login() {
                 <h1 className="lg:text-4xl sm:text-3xl text-xl sm:pb-1 pb-2 font-bold">Welcome to Movie<span className="text-[#CF900C]">e</span></h1>
                 <p className="text-amber-500">{error}</p>
                 <input type="text" placeholder="name" value={name} onChange={handelName} className="border border-[#cf910c60] sm:pt-3 sm:pb-4 pb-3 pt-2 rounded-xl pl-3 lg:pr-40 sm:pr-35 pr-12 outline-none" />
-                <input type="text" placeholder="email" value={email} onChange={handelEmail} className="border border-[#cf910c60] sm:pt-3 sm:pb-4 pb-3 pt-2 rounded-xl pl-3  lg:pr-40 sm:pr-35 pr-12  outline-none"/>
+                <input type="email" placeholder="email" value={email} onChange={handelEmail} className="border border-[#cf910c60] sm:pt-3 sm:pb-4 pb-3 pt-2 rounded-xl pl-3  lg:pr-40 sm:pr-35 pr-12  outline-none"/>
                 <input type="password" placeholder="password" value={password} onChange={handelPassword} className="border border-[#cf910c60] sm:pt-3 sm:pb-4 pb-3 pt-2 rounded-xl pl-3  lg:pr-40 sm:pr-35 pr-12  outline-none" />
                 <div>
                     <button type="submit" className=" pt-2 pb-3 lg:px-15 sm:px-13 px-10 bg-[#cf910c4b] rounded-full sm:text-lg text-sm mt-5 cursor-pointer text-neutral-50 hover:bg-[#CF900C] font-semibold">Login</button>
