@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Star } from "lucide-react"
 import Header from "../components/header";
 import Footer from "../components/footer";
+import type { Show } from "./home";
 function ShowDetails() {
     const { id } = useParams()
-    const [show, setShow] = useState(null)
+    const [show, setShow] = useState<Show| null>(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     // console.log(id)
