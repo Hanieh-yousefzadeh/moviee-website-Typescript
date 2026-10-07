@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { AuthContext } from "../context/authcontext"
+import { useState} from "react";
+import { useAuthContext } from "../context/authcontext"
 import { useNavigate } from "react-router";
 
 function Login() {
@@ -15,9 +15,9 @@ function Login() {
     const correctEmail = "moviee@gmail.com";
     const correctPassword = "78945612"
 
-    const { setUser } = useContext(AuthContext);
+    const { setUser } = useAuthContext();
     
-    function handelSubmit(e) {
+    function handelSubmit(e :React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
 
         if (name.trim() === "") {
@@ -55,16 +55,19 @@ function Login() {
        localStorage.setItem("user", JSON.stringify({ name:name, email:email}));
     }
 
-    function handelName(e) {
-        setName(e.target.value)
+    function handelName(e :React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value
+        setName(value)
     }
 
-    function handelEmail(e) {
-        setEmail(e.target.value)
+    function handelEmail(e :React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value
+        setEmail(value)
     }
 
-    function handelPassword(e) {
-        setPassword(e.target.value)
+    function handelPassword(e :React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value
+        setPassword(value)
     }
 
 

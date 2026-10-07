@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import ShowCart from "../components/showCart";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import type { Show } from "./home";
 
 function Shows() {
 
-    const [shows, setShows] = useState([]);
+    const [shows, setShows] = useState<Show[]>([]);
 
     useEffect(() => {
         async function fetchShows() {
