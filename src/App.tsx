@@ -6,7 +6,7 @@ import Genre from "./pages/genre"
 import Search from "./pages/search"
 import ShowDetails from "./pages/showdetails"
 import Login from './pages/login'
-import { AuthContext } from './context/authcontext'
+import { AuthContext ,type User } from './context/authcontext'
 
 
 
@@ -15,8 +15,9 @@ import { AuthContext } from './context/authcontext'
 
 function App() {
 
-  const [user, setUser] = useState(()=>{
-    return JSON.parse(localStorage.getItem("user")) || null
+  const [user, setUser] = useState<User | null>(()=>{
+    const savedUser = localStorage.getItem("user")
+    return savedUser ? JSON.parse(savedUser) as User : null
   })
   
   return (

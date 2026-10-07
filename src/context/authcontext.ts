@@ -1,13 +1,13 @@
 import { createContext , useContext, type Dispatch ,type SetStateAction} from "react";
 
 
-type User = {
+export type User = {
     name : string;
     email : string;
 }
 
 type AuthContextType = {
-    user : User;
+    user : User | null;
     setUser : Dispatch<SetStateAction<User | null>>
 }
 
