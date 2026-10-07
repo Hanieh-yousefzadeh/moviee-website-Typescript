@@ -16,6 +16,7 @@ export type Show = {
         medium :string;
     }
     premiered: string;
+    genres : string[]
 }
 function Home() {
     const [shows, setShows] = useState<Show[]>([]);
