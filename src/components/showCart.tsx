@@ -1,6 +1,13 @@
 import { Link } from "react-router";
-import { Star } from "lucide-react"
-function ShowCart({ show }) {
+import { Star } from "lucide-react";
+import { type Show } from "../pages/home";
+
+
+type ShowCartProps = {
+    show: Show;
+};
+
+function ShowCart({ show} :ShowCartProps) {
 
     let rating = 1;
     if (show.rating && show.rating.average) {

@@ -5,9 +5,22 @@ import { Link } from "react-router";
 import { ChevronRight } from "lucide-react"
 import Hero from "../components/hero";
 import Footer from "../components/footer";
-function Home() {
 
-    const [shows, setShows] = useState([]);
+export type Show = {
+    id: number;
+    name:string;
+    rating:{
+        average:number
+    } ;
+    image :{
+        medium :string;
+    }
+    premiered: string;
+    genres : string[];
+    summary :string
+}
+function Home() {
+    const [shows, setShows] = useState<Show[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -63,7 +76,7 @@ function Home() {
                     <Link to="/shows" className="flex items-center sm:gap-2.5 hover:text-[#CF900C] xl:pr-2">Veiw all <ChevronRight className="sm:size-6 pt-1 size-5" /></Link>
                 </div>
                 <div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-y-0 gap-y-3 ">
-                    {[...shows].sort((a, b) => new Date(b.premiered) - new Date(a.premiered)).slice(0, 4).map((show) => (
+                    {[...shows].sort((a, b) => new Date(b.premiered).getTime() - new Date(a.premiered).getTime()).slice(0, 4).map((show) => (
                         <ShowCart key={show.id} show={show} />
                     ))}
 

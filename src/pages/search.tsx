@@ -4,11 +4,16 @@ import { CircleX } from "lucide-react";
 import Header from "../components/header";
 import ShowCart from "../components/showCart";
 import Footer from "../components/footer";
+import type { Show } from "./home";
+type SearchResult = {
+    score : number;
+    show : Show
+}
 
 function Search() {
     const [search, setSearch] = useState("");
-    const [result, setResult] = useState([]);
-    const [selected, setSelected] = useState([]);
+    const [result, setResult] = useState<SearchResult[]>([]);
+    const [selected, setSelected] = useState<Show[]>([]);
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -40,8 +45,9 @@ function Search() {
 
     }, []);
 
-    function handelSearch(e) {
-        setSearch(e.target.value);
+    function handelSearch(e :React.ChangeEvent<HTMLInputElement>) {
+        const value = e.target.value
+        setSearch(value);
     }
 
     async function searchShows() {
@@ -77,7 +83,7 @@ function Search() {
 
     }
 
-    function handelSubmit(e) {
+    function handelSubmit(e :React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
 
         if (loading) return;
